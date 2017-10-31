@@ -1,4 +1,4 @@
 # DataMiningCAGED
 
-Bem vindo ao projeto Datamining CAGED
+Bem vindo ao projeto Data Mining CAGED
 
