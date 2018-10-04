@@ -35,7 +35,7 @@ dim_grau_instrucao  |descricao          |character varying(55)  |55      |-     
 dim_idade           |id_idade           |integer                |        |Sim         |Sim           |-                        |-          |
 dim_idade           |classificao        |character varying(20)  |20      |-           |-             |-                        |-          |
 dim_idade           |faixa              |character varying(20)  |20      |-           |-             |-                        |-          |
-dim_local           |id_local           |integer                |        |Sim         |Sim           |-                        |-          |
+dim_local           |id_local           |integer                |        |Sim         |Sim           |-                        |-          |--
 dim_local           |estado             |character varying(2)   |2       |-           |-             |-                        |-          |
 dim_local           |municipio          |character varying(100) |100     |-           |-             |-                        |-          |
 dim_setor_economico |id_setor_economico |integer                |        |Sim         |Sim           |-                        |-          |
@@ -58,11 +58,17 @@ fato_caged          |id_cbo2002         |integer                |        |-     
 fato_caged          |qtd_hora_contrat   |integer                |        |-           |-             |-                        |-          |
 fato_caged          |salario_mensal     |numeric(17,2)          |1114114 |-           |-             |-                        |-          |
 
-Obs.:
+
+Modelo Entidade Relacionamento simples:
+
+[![Diagram_Fato.png](https://i.postimg.cc/jSjQWR2Y/Diagram_Fato.png)](https://postimg.cc/TpZWFMnt)
 
 
+
+------
 Estrutura dos dados CBO e CNAE:
 
+[Estruturas](Estruturas.md)
 
 
 

@@ -37,20 +37,20 @@ Em nosso trabalho usaremos a classficação enumerativa, que está contida na ba
 
 **Grande Grupo**: é a categoria de classificação mais agregada. Reúne amplas áreas de emprego, mais do que tipos específicos de trabalho. Por força de sua amplitude, nem sempre se estabelecem inter-relações dos conjuntos aí reunidos. Representado pelo **1º número** do código da família.
 
-                ![Grande Grupo](http://www.mtecbo.gov.br/cbosite/images/familia1.gif)
+![Grande Grupo](http://www.mtecbo.gov.br/cbosite/images/familia1.gif)
 
 **Subgrupo Principal**: trata-se de agrupamento mais restrito que o grande grupo, e configura, principalmente, as grandes linhas do mercado de trabalho. Representado pelos **2 primeiros** números do código da família.
 
-                ![SubGrupo Principal](http://www.mtecbo.gov.br/cbosite/images/familia2.gif)
+![SubGrupo Principal](http://www.mtecbo.gov.br/cbosite/images/familia2.gif)
 
 **Subgrupo**: também denominado grupo primário, grupo unitário e família ocupacional, reúne ocupações que apresentam estreito parentesco tanto em relação à natureza de trabalho quanto aos níveis de qualificação exigidos. Representado pelos **3 primeiros números** do código da família.
 
-                ![SubGrupo](http://www.mtecbo.gov.br/cbosite/images/familia3.gif)
+![SubGrupo](http://www.mtecbo.gov.br/cbosite/images/familia3.gif)
 
 **Família**: é a unidade do sistema de classificação. Constitui-se de tarefas, obrigações e responsabilidades atribuídas a cada trabalhador. Pode-se ainda conceituar a ocupação como o conjunto articulado de funções, tarefas e operações destinadas à obtenção de produtos ou serviços. Representado pelo código total de **4 números**.
 
 
-                ![Família](http://www.mtecbo.gov.br/cbosite/images/familia4.gif)
+![Família](http://www.mtecbo.gov.br/cbosite/images/familia4.gif)
 
 **Ocupação**: é a agregação de empregos ou situações de trabalho similares quanto às atividades realizadas.
 
