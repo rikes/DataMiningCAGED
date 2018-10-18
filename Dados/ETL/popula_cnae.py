@@ -29,7 +29,7 @@ T = 'SERVIÇOS DOMÉSTICOS'
 U = 'ORGANISMOS INTERNACIONAIS E OUTRAS INSTITUIÇÕES EXTRATERRITORIAIS'
 
 
-conn = psycopg2.connect(database="fato_caged", user="postgres",
+conn = psycopg2.connect(database="caged_dw", user="postgres",
                         password="admin", host="127.0.0.1", port="5432")
 
 conn2 = psycopg2.connect(database="caged_olap", user="postgres",
@@ -50,7 +50,7 @@ rows2 = cur2.fetchall()
 	cur.execute("INSERT INTO dim_cnae2 (id_cnae2, subclasse) VALUES ({0}, '{1}')".format(row[0], row[1]))'''
 
 
-# Inserir classe na subClasse - tabela: cnae2classe
+# Inserir classe : cnae2classe
 '''for row in rows:
 
 	for item in rows2:
@@ -67,7 +67,8 @@ rows2 = cur2.fetchall()
 
 
 # Secao
-'''for row in rows:
+'''
+for row in rows:
 	codigo_table = 0
 
 	if(len(str(row[0])) == 6):
@@ -139,6 +140,7 @@ rows2 = cur2.fetchall()
 		cur.execute("UPDATE dim_cnae2 set secao = '{0}' where id_cnae2 = {1}".format(U, row[0]))
 '''
 # Grupos
+'''
 with open('/home/henrique/Ifes/TCC/Dados/Estrutura CNAE/grupos.csv', 'r', encoding="UTF-8") as grupoCNAE:
 	reader = csv.reader(grupoCNAE, delimiter=';')
 	codigo_table = 0
@@ -154,7 +156,7 @@ with open('/home/henrique/Ifes/TCC/Dados/Estrutura CNAE/grupos.csv', 'r', encodi
 				cur.execute("UPDATE dim_cnae2 set grupo = '{0}' where id_cnae2 = {1}".format(item[1], row[0]))
         
 		grupoCNAE.seek(0)
-
+'''
 
 # Divisoes
 '''with open('/home/henrique/Ifes/TCC/Dados/Estrutura CNAE/divisoes.csv', 'r', encoding="UTF-8") as divisaoCNAE:
