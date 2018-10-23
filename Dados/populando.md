@@ -47,3 +47,9 @@ O MTE, recomenda aos estabelecimentos inserir os registros vinculados a regulame
 
 Foi observado que ao inserir os dados coms as FK já criadas na tabela fato, a inserção através do processo de ETL ocorre com um tempo demasiadamente menor.
 
+
+
+--- 18 de outubro
+
+Vacuum analyse verbose.
+Tentar reduzir o tamanho do banco de dados, seja com 'Vacuum' ou analisando uma forma de direcionar o foco da pesquisa com a finalidade de diminuir a quantidade d edados.
