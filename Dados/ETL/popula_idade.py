@@ -6,6 +6,7 @@ import codecs
 '''
 Classificao de idades segundo 
 https://pt.wikipedia.org/wiki/Predefini%C3%A7%C3%A3o:Faixas_et%C3%A1rias_do_Brasil
+https://www.indexmundi.com/pt/brasil/distribuicao_da_idade.html
 
 '''
 
