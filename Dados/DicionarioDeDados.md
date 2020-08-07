@@ -86,38 +86,32 @@ O código abaixo, cria uma *View* no banco de dados que retorna, através de uma
 
 ``` sql
 
-create or replace view dic as
-SELECT tbl.relname AS Tabela,
-    atr.attname AS Coluna,
-    pg_catalog.format_type(atr.atttypid,atr.atttypmod) AS Tipo,
-    CASE WHEN (atr.atttypmod > 0) THEN atr.atttypmod-4 END AS Tamanho,
-    CASE WHEN atr.attnotnull = 't' THEN 'Sim' ELSE '-' END AS Obrigatorio,
-    coalesce(
-        (select 'Sim' || ''
-           from pg_constraint ct
-          where ct.contype = 'p'
-            and ct.conrelid = tbl.oid
-            AND atr.attnum = ANY (ct.conkey)), '-') as ChavePrimaria,
-    coalesce(
-        (select 'Ref: ' || g.relname
-           from pg_class g
-          inner join pg_constraint ct on g.oid = ct.confrelid
-          where ct.conrelid = tbl.oid
-            AND atr.attnum = ANY (ct.conkey)), '-') as ChaveEstrangeira,
-    coalesce(
-        (select 'Sim' || ''
-           from pg_constraint ct
-          where ct.contype = 'u'
-            and ct.conrelid = tbl.oid
-            AND atr.attnum = ANY (ct.conkey)), '-') as ValorUnico
-  FROM pg_attribute atr
- INNER JOIN pg_class tbl ON tbl.oid = atr.attrelid
-  LEFT JOIN pg_attrdef atrdef ON atrdef.adrelid = tbl.oid AND atrdef.adnum = atr.attnum
-  LEFT JOIN pg_namespace nsp ON nsp.oid = tbl.relnamespace
- WHERE tbl.relkind = 'r'::char
-   AND nsp.nspname = 'public'
-   AND atr.attnum > 0
- order by Tabela, ChavePrimaria desc, ChaveEstrangeira desc, Coluna;
+create or replace
+view dic as
+select
+	tbl.relname as Tabela,
+	atr.attname as Coluna,
+	pg_catalog.format_type(atr.atttypid, atr.atttypmod) as Tipo,
+	case
+		when (atr.atttypmod > 0) then atr.atttypmod-4
+	end as Tamanho
+from
+	pg_attribute atr
+inner join pg_class tbl on
+	tbl.oid = atr.attrelid
+left join pg_attrdef atrdef on
+	atrdef.adrelid = tbl.oid
+	and atrdef.adnum = atr.attnum
+left join pg_namespace nsp on
+	nsp.oid = tbl.relnamespace
+where
+	tbl.relkind = 'r'::char
+	and nsp.nspname = 'public'
+	and atr.attnum > 0
+	and atr.attname not like '%....%'
+order by
+	Tabela desc,
+	Coluna;
 
 ```
 Código fornecido por:
